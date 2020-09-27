@@ -1,4 +1,4 @@
-module github.com/arce/gowebservices
+module github.com/adanrs/gokit
 
 go 1.12
 
