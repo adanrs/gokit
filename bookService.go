@@ -38,7 +38,7 @@ var books = []Book{
 		Author: "Andrew S. Tanenbaum", Publisher: "Andrew S. Tanenbaum"},
 }
 
-func find(x string) int {
+func findBook(x string) int {
 	for i, book := range books {
 		if x == book.BookId {
 			return i
@@ -63,7 +63,7 @@ func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, e
 	var err error
 	var book interface{}
 	var empty interface{}
-	i := find(id)
+	i := findBook(id)
 	if i == -1 {
 		return empty, err
 	}
@@ -73,7 +73,7 @@ func (s bookservice) GetBookById(ctx context.Context, id string) (interface{}, e
 func (s bookservice) DeleteBook(ctx context.Context, id string) (string, error) {
 	var err error
 	msg := ""
-	i := find(id)
+	i := findBook(id)
 	if i == -1 {
 		return "", err
 	}
