@@ -86,7 +86,7 @@ func (s bookservice) UpdateBook(ctx context.Context, book Book) (string, error) 
 	var empty = ""
 	var err error
 	var msg = "success"
-	i := find(book.BookId)
+	i := findBook(book.BookId)
 	if i == -1 {
 		return empty, err
 	}
