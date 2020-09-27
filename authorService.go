@@ -41,11 +41,12 @@ func findAuthor(x string) int {
 	return -1
 }
 
+/*
 func AuthorService(logger log.Logger) AuthorService {
 	return &authorservice{
 		logger: logger,
 	}
-}
+}*/
 
 func (s authorservice) CreateAuthor(ctx context.Context, author Author) (string, error) {
 	var msg = "success"
